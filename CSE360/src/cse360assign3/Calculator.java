@@ -1,3 +1,10 @@
+/**
+ * David Lukacs
+ * Pin #518
+ * CSE 360
+ * Assignment 3
+ * 
+ */
 
 package cse360assign3;
 
