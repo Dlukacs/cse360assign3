@@ -92,7 +92,7 @@ public class Calculator {
 	}
 	
 	/**
-	 * getHistory method: To return history of operations.
+	 * getHistory method: will return a history of all actions as a String.
 	 */
 	public String getHistory() {
 		Calculator myCalculator = new Calculator();

@@ -17,62 +17,95 @@ import org.junit.Test;
 
 public class CalculatorTest {
 
+	/**
+	 * Testing for calculator object creation. 
+	 * Looking to see it not return Null. 
+	 */
 	@Test
 	public void testCalculator() {
-		Calculator cal = new Calculator();
-		assert (cal) != null; 
+		Calculator myCalculator = new Calculator();
+		assert (myCalculator) != null; 
 	}
 	
+	/**
+	 * Testing getTotal method: Using instances of add, subtract, multiply and divide. 
+	 */
 	@Test
 	public void testGetTotal(){
-		Calculator cal = new Calculator();
-		int result = cal.getTotal();
+		Calculator myCalculator = new Calculator();
+		int result = myCalculator.getTotal();
 		assertEquals(0,result);
+		
+		myCalculator.add(5);
+		myCalculator.subtract(1); 
+		myCalculator.multiply(2);
+		myCalculator.divide(2);
+		result = myCalculator.getTotal();
+		
+		assertEquals(4, result);
+		
 	}
 	
+	/**
+	 * Testing add method: Adding numbers to total.
+	 */
 	@Test
 	public void testAdd(){
-		Calculator cal = new Calculator();
-		cal.add(5);
-		int result = cal.getTotal();
+		Calculator myCalculator = new Calculator();
+		myCalculator.add(5);
+		int result = myCalculator.getTotal();
 		assertEquals(5,result);
 	}
 	
+	/**
+	 * Testing subtract method: Adding numbers to total and then subtracting them.
+	 */
 	@Test
 	public void testSubtract(){
-		Calculator cal = new Calculator();
-		cal.add(10);
-		cal.subtract(2);
-		int result = cal.getTotal();
+		Calculator myCalculator = new Calculator();
+		myCalculator.add(10);
+		myCalculator.subtract(2);
+		int result = myCalculator.getTotal();
 		
 		assertEquals(8,result);
 	}
-
+	
+	/**
+	 * Testing multiply method: Adding numbers to total and multiplying it.
+	 */
 	@Test
 	public void testMultiply(){
-		Calculator cal = new Calculator();
-		cal.add(10);
-		cal.multiply(2);
-		int result = cal.getTotal();
+		Calculator myCalculator = new Calculator();
+		myCalculator.add(10);
+		myCalculator.multiply(2);
+		int result = myCalculator.getTotal();
 		
 		assertEquals(20,result);
 	}
 	
+	/**
+	 * Testing divide method: Adding numbers to total and dividing it.
+	 * Also testing divison by 0. 
+	 */
 	@Test
 	public void testDivide(){
-		Calculator cal = new Calculator();
-		cal.add(10);
-		cal.divide(2);
-		int result = cal.getTotal();
+		Calculator myCalculator = new Calculator();
+		myCalculator.add(10);
+		myCalculator.divide(2);
+		int result = myCalculator.getTotal();
 		
 		assertEquals(5,result);
 		
 		//Testing for dividing by zero to return zero.
-		cal.divide(0);
-		result = cal.getTotal();
+		myCalculator.divide(0);
+		result = myCalculator.getTotal();
 		assertEquals(0,result);
 	}
 
+	/**
+	 * Testing getHistory method: testing instances of adding, subtracting, multiplying and dividing.
+	 * Looking to see return string matches getHistory method. 
+	 */
 	@Test
 	public void testGetHistory(){
 		Calculator myCalculator = new Calculator();  
