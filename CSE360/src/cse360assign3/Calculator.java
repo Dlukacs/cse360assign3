@@ -13,6 +13,8 @@ package cse360assign3;
 public class Calculator {
 	
 	private int total;
+	private String history = "0";
+	
 	
 	/**
 	 * Calculator constructor: 
@@ -27,17 +29,19 @@ public class Calculator {
 	 * @return Returns total value. 
 	 */
 	public int getTotal () {
-		Calculator cal = new Calculator();
+		Calculator myCalculator = new Calculator();
 		return total;
 	}
 	
 	/**
-	 * add method: adds value.
+	 * add method: adds parameter to total value.
 	 * @param value
 	 */
 	public void add (int value) {
-		Calculator cal = new Calculator();
+		Calculator myCalculator = new Calculator();
 		total = total + value; 
+		
+		history = history + (" + " + value); 
 	}
 	
 	/**
@@ -45,9 +49,11 @@ public class Calculator {
 	 * @param value
 	 */
 	public void subtract (int value) {
-		Calculator cal = new Calculator();
-		int sub = value;
-		total =  total - sub;
+		Calculator myCalculator = new Calculator();
+		total =  total - value;
+		
+		history = history + (" - " + value); 
+		
 	}
 	
 	/**
@@ -55,9 +61,10 @@ public class Calculator {
 	 * @param value
 	 */
 	public void multiply (int value) {
-		Calculator cal = new Calculator();
-		int multiply = value;
-		total =  total * multiply;
+		Calculator myCalculator = new Calculator();
+		total =  total * value;
+		
+		history = history + (" * " + value); 
 	}
 	
 	
@@ -69,7 +76,7 @@ public class Calculator {
 	 * @param value
 	 */
 	public void divide (int value) {
-		Calculator cal = new Calculator();
+		Calculator myCalculator = new Calculator();
 		int divide = value;
 		
 		//Conditional if dividing by zero. 
@@ -79,13 +86,17 @@ public class Calculator {
 		
 		else
 			total =  total / divide;
+		
+		history = history + (" / " + value); 
 
 	}
 	
 	/**
-	 * getHistory method: returns an empty string.
+	 * getHistory method: To return history of operations.
 	 */
-	public String getHistory () {
-		return "";
+	public String getHistory() {
+		Calculator myCalculator = new Calculator();
+		
+		return(history);
 	}
 }
